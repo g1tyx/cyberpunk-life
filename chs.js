@@ -538,7 +538,7 @@ var cnItems = {
     "Life Expectancy:": "寿命:",
     "Maximum Integrity:": "最大的完整性:",
     "Motherboard:": "主板:",
-    "Net": "网",
+    "Net": "网络",
     "Net Influence:": "净影响力:",
     "Network Marauder": "网络掠夺者",
     "ON/OFF": "开/关",
