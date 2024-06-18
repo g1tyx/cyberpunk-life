@@ -1199,6 +1199,7 @@ var cnRegReplace = new Map([
     [/^Character ([\d\.,]+)$/, '角色 $1'],
     [/^motherboard ([\d\.,]+)$/, '主板 $1'],
     [/^Available: ([\d\.,]+)$/, '可用: $1'],
+    [/^Available: \-([\d\.,]+)$/, '可用: \-$1'],
     [/^Get ([\d\.,]+)$/, '获取 $1'],
     [/^Reincarnate ([\d\.,]+) times$/, '转生 $1 次'],
     [/^Meta item ([\d\.,]+)$/, '元项 $1'],
