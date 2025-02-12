@@ -7,8 +7,8 @@ body {
   background-color: rgb(32, 32, 32);
   margin: 0px; 
 
-  --teamCharOutline: #d4cc85; 
-  --teamCharInside: #335164; 
+  --teamCharOutline: #6db484; 
+  --teamCharInside: #4b5e69; 
   --teamCharTitleBack: #172a42;
 }
 
@@ -162,7 +162,9 @@ ul {
 /************/
 
 .Header {
+  height: 110px;
   background-position-y: 555px;
+  padding: 10px;
 }
 
 .GameTitle {
@@ -177,7 +179,7 @@ ul {
 
   font-weight: 900;
   margin: 0px 21px;
-  font-size: 37px;
+  font-size: 42px;
   text-shadow: 1px 1px 0px #6c7fee, 1px 2px 0px #6c7fee, 1px 3px 0px #6c7fee,
     1px 4px 0px #6c7fee, 1px 5px 0px #6c7fee, 1px 6px 0px #6c7fee,
     1px 10px 5px rgba(16, 16, 16, 0.5), 1px 15px 10px rgba(16, 16, 16, 0.4),
@@ -275,6 +277,10 @@ ul {
   padding: 18px;
   border-radius: 3px;
 }
+.SidebarContainer .InfosSubContainer,
+.SidebarContainer .InfosSubContainer2 {
+  padding: 8px 18px;
+}
 
 .InfosSubContainer2 {
   background-color: var(--windowPanelInsideColor);
@@ -304,6 +310,23 @@ ul {
 
   left: 2px;
   top:2px;
+}
+.Portrait.Portrait-recap {
+  height: 300px;
+  width: 300px;
+  border-color: rgb(131, 71, 81);
+  border-width: 24px;
+  border-image: linear-gradient(310deg, rgb(109, 50, 60) 0%, rgb(51, 21, 26) 100%) 1;
+  z-index: 0;
+  right: -23px;
+  top: -23px;
+  opacity:0.3;
+  transform: rotate(-5deg);
+  box-shadow: unset;
+}
+.RecapLife >.InfosSubContainer{
+  position: relative;
+  overflow: hidden;
 }
 
 .PanelCharacter > div,
@@ -439,7 +462,30 @@ ul {
   min-width: 125px;
   margin: auto 15px auto 10px;
 }
-
+.ProgressBarData.Minlevel.Auto{
+  min-width: 75px;
+}
+.ProgressBarData.Minlevel.Skip{
+  margin-left: 110px;
+}
+@media screen and (max-width: 1500px) {
+  .ProgressBarData.Minlevel.Skip{
+    margin-left: 60px;
+  }
+}
+.ProgressBarData.Minlevel.SkipInput{
+  min-width: unset;
+  margin-left: 0px;
+}
+.ProgressBarData.Minlevel.SkipInput>.Minlevel_Container{
+  margin-left: 0px;
+}
+.Minlevel_Container .Input_minlevel{
+ max-width: 130px;
+}
+.NoDisplay {
+  display: none !important;
+}
 .JobContainer,
 .SkillContainer,
 .GearContainer {
@@ -978,6 +1024,30 @@ ul {
   padding: 5px 5px 5px 20px;
 }
 
+.TooltipImgContainer{
+  width: 100%;
+  height: 80px;
+
+  position: relative;
+}
+.TooltipImgBackground{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background-color:rgb(39, 39, 70);
+}
+.TooltipImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;      
+  background-position: center;  
+  background-repeat: no-repeat; 
+}
+
+
 .HelpBtn {
   position: absolute;
   width: 20px;
@@ -1185,7 +1255,7 @@ ul {
 
 .ScratchCardContainer,
 .ScratchCardTimer {
-  width: 720px;
+  width: 736px;
   height: 353px;
 }
 .ScratchCardTimer {
@@ -1257,9 +1327,10 @@ ul {
 
 .ScratchCardUnder {
   text-align: justify;
-  font-size: 4.5vw;
+  font-size: 10vmin;
   background-color: rgba(48, 54, 140, 1);
   border-radius: 20px;
+  overflow: hidden;
 }
 
 .ScratchResult canvas{
@@ -1413,6 +1484,7 @@ ul {
 
 .ButtonGangContainer {
   width: 100px;
+  height: 100px;
   position: relative;
 }
 
@@ -1470,7 +1542,6 @@ ul {
 }
 
 .OrgTypeName {
-  width: max-content;
   background-color: #45acac;
   padding: 0px 8px;
   border-radius: 10px;
@@ -1480,6 +1551,20 @@ ul {
 .OrgTypeName.OrgTypeCrime{
   background-color: #d55422;
 }
+
+.GangUpgradeNameFirstWord{
+  background-color: rgb(79, 44, 153);
+	color: #70ffeb;
+	border-radius: 10px;
+	border: 1px solid #ffffffbd;
+	box-shadow: 1px 4px 5px #233f446b;
+	padding: 1px 8px;
+	font-size: medium;
+}
+.GangUpgradeNameEnd{
+  margin-top: 5px;
+}
+
 .FloatingLoot {
   position: absolute;
   width: 180px;
@@ -1683,6 +1768,17 @@ ul {
   border-top: solid #61c8e8 2px;
   filter: drop-shadow(6px 6px 10px #232351);
 }
+.CrimeOrg>.GangButton {
+  background-color: rgba(60, 38, 40, 0.56);
+  border-top: solid #a46464 2px;
+  color: white;
+}
+.CrimeOrg .GangButtonLevel, 
+.CrimeOrg .GangButtonEffect {
+  background-color: rgb(47, 37, 37) !important;
+  border: 1px solid rgb(102, 67, 67) !important;
+  color: #f2e2e2 !important;
+}
 .ShopObjs {
   height: 220px;
 }
@@ -1719,7 +1815,7 @@ ul {
 }
 .selectedNodeBox{
   position: relative; 
-  margin-top: 20px; 
+  margin-bottom: 20px; 
   height: 200px; 
   width: 100%; 
   padding: 4px; 
@@ -1881,12 +1977,21 @@ ul {
 
 .StatsSuperContainer{
   display:flex;
-  flex-direction: row;
-  
+  flex-direction: row;  
 }
+
 .StatsContainer{
   width: 50%;
 }
+.StatsContainer h4{
+  color:rgb(135, 198, 250);
+  margin: 0px 0px 10px 0px;
+}
+.StatsParagraph{
+  margin-left: 20px;
+  margin-bottom: 35px;
+}
+
 .StatsPanel{
   height: 300px;
   overflow-y: scroll;
@@ -1909,11 +2014,59 @@ ul {
   align-items: center;
 }
 .MetaContainer{
-  margin: 0px 10px;
+  margin: 0px 10px 0px 0px;
+}
+.MetaContainer.Alone{
+  margin: unset;
 }
 .MetaButton{
   width: 300px;
   height:75px;
+}
+
+.QuestButtonContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-evenly;
+}
+.QuestButton{
+  background-color: rgb(67, 63, 82);
+  border: 1px solid rgb(105, 105, 15);
+  border-radius: 6px;
+  width: 46%;
+  padding: 15px;
+  color: white;
+}
+@media screen and (max-width: 800px) {
+  .freeSize{
+    .QuestButton{
+      width: auto;
+    }
+  }
+}
+.QuestButton.IsActive{
+  background-color: rgb(67, 63, 82);
+  border: 1px solid yellow;
+}
+.QuestTitle {
+	width: 100%;
+	background: #00000080;
+	padding: 5px 30px;
+	margin-bottom: 10px;
+	font-size: large;
+}
+.QuestEffect {
+  font-style: italic;
+  border: 1px solid rgba(255, 255, 255, 0.301);
+  margin: 10px 25px;
+  padding: 5px 15px;
+}
+
+.MetaContainer.Quests{
+  width: 100%;
 }
 
 /* MetaButton */
@@ -2042,15 +2195,28 @@ ul {
   display: flex;
   flex-direction: column;
 }
+.ContainerObjResearch.MainContainerObjResearch{
+  width: 100%;
+  height: 100px; 
+  margin: 0px 0px 20px 0px;
+}
+
 .ObjResearchTitle {
-	background-color: rgb(15, 13, 41);
-	height: 25px;
+  height: 25px;
 	text-align: center;
 	margin: 0px 20px;
-	border-radius: 20px;
 	padding-top: 4px;
-	color: #e0ffcf;
+
+	border: 1px solid #000;
+	border-radius: 50px;
+	background-color: #162131;
+	background-image: radial-gradient(75% 50% at 50% 0%, #355255 1%, transparent), radial-gradient(75% 50% at 50% 85%, #b3a95654, transparent);
+	box-shadow: inset 0 0 2px 1px rgba(125, 126, 118, 0.2), 0 1px 4px 1px rgba(22, 85, 168, 0.2), 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+	color: #fff;
+	text-shadow: 0 1px 1px #162131;
 }
+
+
 .ObjResearchInsideContainer{
   display: flex;
   flex-direction: column;
@@ -2076,13 +2242,16 @@ ul {
 }
 .ResearchProgressBar{
   width: 50%;
-  background-color: #f3ffa3;
+  background: linear-gradient(45deg, #3b5a92, #3b5a92);
   height: 100%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+}
+.ResearchProgressBar.IsActive{
+  background: linear-gradient(45deg, #0058ff, #88e666);
 }
 
 
@@ -2219,6 +2388,7 @@ input:checked + .slider:before {
   position: relative;
   border: 1px solid #475266;
   background-color: #20252e;
+  min-height:200px;
 
   padding: 20px 10px 10px 10px;
   margin-bottom: 10px;
@@ -2227,12 +2397,6 @@ input:checked + .slider:before {
   flex-direction: row;
   gap: 5px;
 }
-.Mission.started{
-  background-color: rgb(33, 68, 34);
-}
-.Mission.over{
-  background-color: rgb(87, 49, 60);
-}
 .MissionTopBanner{
   width: 100%;
   position:absolute;
@@ -2240,6 +2404,15 @@ input:checked + .slider:before {
   left: 0px;
   height: 10px;
   background: linear-gradient(90deg, rgb(46, 72, 119) 0%, rgb(108, 54, 108) 100%)
+}
+.MissionTopBanner.filled{
+  background: linear-gradient(90deg, rgb(158, 157, 80) 0%, rgb(108, 54, 108) 100%)
+}
+.MissionTopBanner.started{
+  background: linear-gradient(90deg, rgb(68, 129, 70) 0%, rgb(108, 54, 108) 100%)
+}
+.MissionTopBanner.over{
+  background: linear-gradient(90deg, rgb(202, 48, 164) 0%, rgb(108, 54, 108) 100%)
 }
 .MissionContainer{
   width: 100%;
@@ -2251,16 +2424,71 @@ input:checked + .slider:before {
   flex-direction: column;
 }
 .MissionButton>button{
-  height: 30%;
+  height: 40px;
   margin-bottom: 3%;
   width: 100%;
 }
-
-.LootMission.OptionsBox{
-  position: absolute;
-  left: 40px;
-  right: unset;
+.MissionInfoReqs{
+  margin: 3px 10px;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1); 
 }
+.DropdownMenuChoiceCharacter{
+  position: absolute;
+  border: 1px solid white;
+  background-color: black;
+  top: 0px;
+  left: 0px;
+  padding: 15px;
+}
+.MenuChoiceCharacter{
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+
+.LootMission {
+	width: 450px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	padding: 20px;
+	background-color: #1a1a1a;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+  gap: 10px;
+	border-radius: 5px;
+	border: 1px solid rgb(126, 126, 126);
+	transform: translate(-50%, -50%);
+}
+.LootMissionBackground{
+  width: 100%;
+  height: 100%;
+  top:0px;
+  left:0px;
+  position: absolute;
+  background-color: #000000c7;
+}
+.LootMission .ConfirmBTN{
+  width: 20%;
+}
+.LootMissionText {
+  width: 80%;
+}
+.LootMissionResult {
+  padding: 5px;  
+} 
+.LootMissionResult.Fail{
+  background-color: rgb(187, 72, 72);
+  border: 1px solid black;
+}
+.LootMissionResult.Success{
+  background-color: rgb(13, 163, 33);
+  border: 1px solid black;
+}
+
 .SlotContainer{
   background-color:rgba(0, 0, 0, 0.15);
   border-left: 1px solid #475266;
@@ -2321,21 +2549,42 @@ input:checked + .slider:before {
 	flex-direction: row;
   flex-wrap: wrap;
 }
+
+.TeamCharacterMainContainer{
+
+  perspective: 700px;
+}
 .TeamCharacterBase{
   position: relative;
-  width: 320px;
-  height: 300px;
+  width: 280px;
+  height: 285px;
   margin: 0px -12px 40px 0px;
+
+  transition: all 0.3s ease-in-out;
+  transform-style: preserve-3d;
 }
+
+
+.TeamCharacterMainContainer:hover .TeamCharacterPortrait, 
+.TeamCharacterMainContainer:hover .TeamCharacterCircle,
+.TeamCharacterMainContainer:hover .TeamCharacterCircleInside {
+  transform: scale(1.2) translate(-15px, 0px); 
+  transition: all 0.3s ease-in-out;  
+}
+.TeamCharacterMainContainer:hover .charaName>h3 {
+  transform: scale(1.15); 
+  transition: all 0.35s ease-in-out;  
+}
+
 .TeamCharacterCircle{
   position: absolute;
   width: 140px;
   height: 140px;
-  border: 2px solid var(--teamCharOutline);
+  border: 1px solid var(--teamCharOutline);
   border-right: none; 
   border-radius: 50%;
 
-  box-shadow: -2px 0px 4px #0000005e;
+  /* box-shadow: -2px 0px 4px #0000005e; */
 }
 .TeamCharacterCircleInside{
   position: absolute;
@@ -2349,15 +2598,16 @@ input:checked + .slider:before {
 }
 .TeamCharacterRect {
   position: absolute;
-  width: 250px;
-  height: 300px;
+  width: 210px;
+  height: 285px;
   background-color: var(--teamCharInside);
   left: 70px; 
   border-radius: 8px;
-  border: 2px solid var(--teamCharOutline);
+  border: 1px solid var(--teamCharOutline);
   border-left: none; 
-  box-shadow: -2px 0 0 0 var(--teamCharOutline); 
+  box-shadow: -1px 0 0 0 var(--teamCharOutline); 
 }
+
 .TeamCharacterSuperContainer{
   position: relative;
   width: 100%;
@@ -2378,24 +2628,24 @@ input:checked + .slider:before {
   padding: 20px;
 }
 .TeamCharacterStatsContainer{
-  margin-left: 70px;
+  margin: -20px 0px 0px 65px;
   display: flex;
   flex-direction: row;
 }
 .TeamCharacterContainer > .charaName{
   background-color: var(--teamCharTitleBack);
-  padding: 5px 20px;
+  color: white;
+  padding: 3px 10px;
   margin-left: 55px;
   border-radius: 4px;
-  width: 160px;
+  width: 128px;
   height: 80px;
   text-align: center;
   display: flex;
   align-items: center;
+  transform-style: preserve-3d;
 }
-.charaName>h3{
-  margin:auto;
-}
+
 .TeamCharacterStatus{
   display: flex;
   flex-direction: row;
@@ -2406,11 +2656,14 @@ input:checked + .slider:before {
   flex-direction: row;
   margin: 10px;
   width:100%;
-  padding: 2px 5px;
+  border-radius: 10px;
+  padding: 2px 25px;
+  color: rgba(255, 255, 255, 0.603);
+  font-size: smaller;
 }
 .TeamCharacterChart{
   height: 125px;
-  width: 175px;
+  width: 155px;
   padding: 0px;
   margin: 0px 8px;
 }
@@ -2418,6 +2671,7 @@ input:checked + .slider:before {
   width: 30%;
   height: 100%;
   background-color: var(--teamCharTitleBack);
+  border-right: 2px solid rgba(0, 0, 0, 0.25);
   padding: 5px 15px;
   margin-top: 35px;
   font-size: small;
@@ -2435,6 +2689,7 @@ input:checked + .slider:before {
 }
 .CharaColorStatus{
   background-color: var(--teamCharTitleBack);
+  border-right: 2px solid rgba(0, 0, 0, 0.25);
   position: absolute;
   width: auto;
   border-radius: 8px 0px 0px 8px;
@@ -2442,16 +2697,30 @@ input:checked + .slider:before {
   right: 0px;
   bottom: 7px;
 }
+.CharaColorStatus.InMission{
+  background-color: rgb(65, 236, 65);
+  color: black;
+}
+.CharaColorStatus.Waiting{
+  background-color: rgb(237, 248, 76);
+  color: black;
+}
 .CharaColorHuman{
+  padding-left: 15px;
   background-color: rgb(28, 133, 98);
 }
 .CharaColorBots{
+  padding-left: 15px;
   background-color: rgb(54, 54, 155);
 }
 .CharaColorBio{
+  padding-left: 15px;
   background-color: rgb(122, 35, 118);
 }
-
+.charaName > h3{
+  font-size: 14px;
+  margin:auto;
+}
 .BlackMarket-container{
   display: flex;
   flex-direction: row;
@@ -2607,6 +2876,103 @@ input:checked + .slider:before {
     filter: hue-rotate(360deg);
   }
 }
+.CanvasAnimBackground {
+  display: block;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
+  z-index: -1; 
+}
+
+
+.AnimLoaderMission {
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(#ffffff 0 0) right/51% 100% no-repeat;
+  display: flex;
+  animation: l10-0 2s linear infinite;
+}
+.AnimLoaderMission:before,
+.AnimLoaderMission:after {
+  content: "";
+  width: 15px;
+  background: #ffffff;
+  animation: l10-1 2s linear infinite;
+}
+.AnimLoaderMission:after {
+  animation-delay: -1s;
+  --s:-1;
+}
+@keyframes l10-1 {
+  0%,100%{transform:scaleX(var(--s,1)) rotate(0)}
+  25%,75%   {transform:scaleX(var(--s,1)) rotate(180deg)}
+}
+
+@keyframes l10-0 {
+  0%,49.9%{transform:scaleX( 1)}
+  50%,100%{transform:scaleX(-1)}
+}
+
+
+.MissionLevelButtonContainer{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  background-color: var(--windowPanelInsideColor);
+  padding: 10px 10px 10px 40px;
+  margin: 10px 0px;
+}
+
+#MissionsLeveldDropdown{
+  color:black;
+  top: 40px;
+  left: 80px;
+}
+
+.MissionLevelButton {
+
+	left: 190px;
+}
+
+.Tooltip_TeamCharacter{
+  min-width:300px;
+}
+
+.RecapLife{
+  position: absolute;
+  color: white;
+  height: auto;
+  width: 500px;
+}
+.BtnContainerRecapLife{
+  width: 100%;
+  position: relative;
+  height: 30px;
+}
+.BtnRecapLife{
+  height: 100%;
+  position: absolute;
+  right: 20px;
+}
+.RecapLifeInsideContainer {
+	margin: 25px;
+	max-height: 320px;
+	overflow-y: auto;
+	scrollbar-width: thin;
+	scrollbar-color: #802626 #2001016b;
+	padding: 5px;
+	width: 100%;
+	margin-left: 5%;
+}
+
+
+
+
+
+
 
 
 
@@ -2664,6 +3030,10 @@ input:checked + .slider:before {
     .MissionButton>button{
       height: 100%;
     }
+    .LootMission {
+      width: 90%;    
+    }
+
 
     .BtnPause,
     .BtnOptions {
@@ -2697,7 +3067,9 @@ input:checked + .slider:before {
       width: 63px;
       margin-left: 12px;
     }
-
+    .ContainerObjResearch.MainContainerObjResearch{
+      height: auto; 
+    }
     .InfosContainer {
       margin: 0px;
       padding: 10px 5px;
@@ -2738,11 +3110,20 @@ input:checked + .slider:before {
       text-align: left;
       height: 30px;
     }
+    /*
     .ProgressBarData.Minlevel {
-      width: 100% !important;
+      width: 100% !important; 
+    } */
+    .ProgressBarData.Minlevel.Skip{
+      margin-left: 0px;
     }
-    .ProgressBarData.Minlevel.NoDisplay {
-      display: none;
+    .ProgressBarData.Minlevel.Skip{
+      position: unset;
+      right: unset;
+      height: 10px;
+    }
+    .ProgressBarData.Minlevel.SkipInput{
+      margin-left:20px;
     }
     .GearContainer > .ProgressBarData:first-of-type {
       width: 50% !important;
@@ -2751,9 +3132,21 @@ input:checked + .slider:before {
       padding: 3px;
     }
 
-    .react-tooltip {
-      width: 75%;
+    .MetaContainer.First {
+      font-size: small;
     }
+    .MetaContainer.Second{
+      width: 32%;
+    }
+    .ConfirmationBox.OptionsBox{
+      width: auto !important;
+      margin: unset !important;
+    }
+    /*
+    .react-tooltip {
+      width: 75%; 
+    }
+    */
 
     .ImgShopOwner {
       background-position-x: center;
@@ -2811,7 +3204,9 @@ input:checked + .slider:before {
     .ScratchCardContainer,
     .ScratchCardTimer {
       width: 100%;
-      height: 480px;
+      max-width: 720px;
+      height: 372px;
+      margin-bottom: 95px;
     }
     .ScratchCardContainerInside {
       flex-direction: column;
@@ -2821,11 +3216,20 @@ input:checked + .slider:before {
     .ScratchCardRight {
       width: auto;
       margin: 2px 10px;
+      height: 32px;      
+      padding-top: 7px;
     }
-
+    .ScratchCardLootButton{
+      height: 50px;
+      margin-top: 28px;
+    }
     .ScratchCardMid {
       display: flex;
       justify-content: center;
+    }
+
+    .ScratchCardUnder {
+      font-size: 8vw;
     }
 
     .OptionsBTN {
@@ -2857,6 +3261,7 @@ input:checked + .slider:before {
     .GangUpgrade {
       margin: 3px 5px 22px 5px;
       width: 140px;
+      height: 64px; 
     }
 
     .GangButtonContainer {
@@ -2920,6 +3325,7 @@ input:checked + .slider:before {
       text-align: center;
       order: 2;
     }
+
     .SellCard{
       order: 1;
     }
@@ -2956,7 +3362,6 @@ input:checked + .slider:before {
       width: 100%;
     }
     
-
     .selectedNodeBox{
       height: unset;
       flex-direction: column;
@@ -2982,7 +3387,12 @@ input:checked + .slider:before {
     .Story_Background>.react-flow{
       height: 360px!important;
     }
-
+    .GameTitle {
+      font-size: 35px;
+    }
+    .Header{
+      height:90px;
+    }
     .header-mobile{
       position: fixed;
       display:block;
@@ -3062,9 +3472,31 @@ input:checked + .slider:before {
       top:3px;
       height: 13px;
     }
+
+    .MessageItem{
+      width: 140px !important;
+    }
+    
+    .RecapLife{
+      width: 90%;
+      left: 5%;
+      top: 180px;
+      position: fixed;
+    }
+    .RecapLifeInsideContainer{
+      max-height: 250px;
+    }
   }
 }
 /* END RESPONSIVE */
+
+
+
+
+
+
+
+
 
 
 
@@ -3073,7 +3505,7 @@ input:checked + .slider:before {
 .ads-container.ads-header-desktop {
   display: block;
   position: absolute;
-	top: 0px;
+	top: 10px;
 	margin-left: 335px;
   /* z-index: 100; */
   height: 90px!important;
